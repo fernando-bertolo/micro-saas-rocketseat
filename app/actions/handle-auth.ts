@@ -5,7 +5,7 @@ import { auth, signIn, signOut } from "@/app/lib/auth"
 export async function handleAuth() {
     const session = await auth();
 
-    if (!session) {
+    if (session) {
         return await signOut({
             redirectTo: "/login",
         });
